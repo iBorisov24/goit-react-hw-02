@@ -1,8 +1,10 @@
-export default function feedback({ text, review }) {
-	return (
-		<p>
-			{text}
-			{review}
-		</p>
-	);
+export default function feedback({ type, review, total }) {
+	if (total > 0) {
+		return (
+			<p>
+				{type}
+				{review}
+			</p>
+		);
+	}
 }

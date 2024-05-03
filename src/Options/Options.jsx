@@ -1,11 +1,8 @@
 import css from './Options.module.css';
 import clsx from 'clsx';
-export default function Options({ text, updateFeedback }) {
+export default function Options({ text, handleClick }) {
 	return (
-		<button
-			onClick={text => updateFeedback(text)}
-			className={clsx(css['button'])}
-		>
+		<button onClick={() => handleClick()} className={clsx(css['button'])}>
 			{text}
 		</button>
 	);
