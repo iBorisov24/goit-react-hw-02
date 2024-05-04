@@ -1,10 +1,16 @@
-export default function feedback({ type, review, total }) {
-	if (total > 0) {
+export default function feedback({ totalFeedback, typeList }) {
+	if (totalFeedback > 0) {
 		return (
-			<p>
-				{type}
-				{review}
-			</p>
+			<ul>
+				<li>Good:{typeList.good}</li>
+				<li>Neutral:{typeList.neutral}</li>
+				<li>Bad:{typeList.bad}</li>
+				<li>Total: {totalFeedback}</li>
+				<li>
+					Positive:
+					{Math.round((typeList.good / totalFeedback) * 100) + '%'}
+				</li>
+			</ul>
 		);
 	}
 }
